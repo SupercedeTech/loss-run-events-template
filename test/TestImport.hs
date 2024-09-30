@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module TestImport
   ( module TestImport
   , module X
@@ -19,7 +21,7 @@ withApp = around (bracket beforeEach afterEach) . aroundWith (. fst)
   where
   beforeEach :: IO (TestApp App, ())
   beforeEach = do
-    app <- makeFoundation
+    app <- makeFoundation ":memory:"
     pure ((app, defaultMiddlewaresNoLogging), ())
 
   afterEach :: (TestApp App, ()) -> IO ()

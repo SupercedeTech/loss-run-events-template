@@ -10,7 +10,7 @@ spec = withApp $ do
   it "Loads the master site's home page" $ do
     get HomeR
     statusIs 200
-    htmlAllContain "p" "Home"
+    htmlAllContain "h1" "Loss Run Events"
 
   it "Loads the subsite's home page" $ do
     get $ SubR HelloR

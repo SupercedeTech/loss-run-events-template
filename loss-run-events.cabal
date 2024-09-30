@@ -40,6 +40,8 @@ library loss-run-events-example
     , classy-prelude-yesod
     , foreign-store
     , loss-run-events
+    , persistent
+    , persistent-sqlite
     , warp
 
   ghc-options:
