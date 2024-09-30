@@ -17,8 +17,8 @@
           hl = pkgs.haskell.lib;
         in
         {
-          packages.yesod-subsite = pkgs.haskellPackages.yesod-subsite;
-          packages.default = pkgs.lib.trivial.pipe pkgs.haskellPackages.yesod-subsite
+          packages.loss-run-events = pkgs.haskellPackages.loss-run-events;
+          packages.default = pkgs.lib.trivial.pipe pkgs.haskellPackages.loss-run-events
             [
               hl.dontHaddock
               hl.enableStaticLibraries
@@ -28,11 +28,11 @@
             ];
 
           checks = {
-            inherit (pkgs.haskellPackages) yesod-subsite;
+            inherit (pkgs.haskellPackages) loss-run-events;
           };
 
           devShells.default = pkgs.haskellPackages.shellFor {
-            packages = p: [ p.yesod-subsite ];
+            packages = p: [ p.loss-run-events ];
             buildInputs = with pkgs.haskellPackages; [
               cabal-fmt
               cabal-install
@@ -44,14 +44,14 @@
         haskell = prev.haskell // {
           # override for all compilers
           packageOverrides = prev.lib.composeExtensions prev.haskell.packageOverrides (_: hprev: {
-            yesod-subsite =
+            loss-run-events =
               let
                 haskellSourceFilter = prev.lib.sourceFilesBySuffices ./. [
                   ".cabal"
                   ".hs"
                 ];
               in
-              hprev.callCabal2nix "yesod-subsite" haskellSourceFilter { };
+              hprev.callCabal2nix "loss-run-events" haskellSourceFilter { };
           });
         };
       };

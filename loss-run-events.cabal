@@ -1,5 +1,5 @@
 cabal-version: 2.2
-name:          yesod-subsite
+name:          loss-run-events
 version:       0.1.0
 build-type:    Simple
 
@@ -24,7 +24,7 @@ library
 
   default-language:   Haskell2010
 
-library yesod-subsite-example
+library loss-run-events-example
   exposed-modules:
     Dev
     ExampleApp
@@ -39,7 +39,7 @@ library yesod-subsite-example
     , classy-prelude
     , classy-prelude-yesod
     , foreign-store
-    , yesod-subsite
+    , loss-run-events
     , warp
 
   ghc-options:
@@ -66,8 +66,8 @@ test-suite test
     , fakedata                         >=1.0
     , fast-logger
     , hspec                            >=2.7.10
-    , yesod-subsite
-    , yesod-subsite-example
+    , loss-run-events
+    , loss-run-events-example
     , yesod
     , yesod-core                       >=1.6.20.2
     , yesod-test
