@@ -29,3 +29,15 @@ will be served at http://localhost:3000/.
 - Document any added top-level functions.
 
 - Feeling ambitious? Move the loss run events page into a subsite.
+
+## Details
+
+- Do not implement the configure table button, or the configure table modal window.
+
+- Do not implement the drop-down menu for 'Upload Loss Adjustments'. Instead, just make this button read `data.csv` from the filesystem, parse the data, and persist it in the database.
+
+- The _Back to Pack_ anchor can link to `"#"`.
+
+- Ignore the footer.
+
+- Implement the header if there's still time.
