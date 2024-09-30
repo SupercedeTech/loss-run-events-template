@@ -40,6 +40,7 @@ library loss-run-events-example
     , classy-prelude-yesod
     , foreign-store
     , loss-run-events
+    , monad-logger
     , persistent
     , persistent-sqlite
     , warp
